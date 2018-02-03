@@ -100,3 +100,17 @@ __nonnull 指对象不能为NULL
 ```
 
 https://www.jianshu.com/p/b3a31eed945f
+
+
+
+# 数据类型
+
+容器类NSString, NSData, NSData, NSDictionary
+
+1.__NSCFConstantString
+
+2.__NSCFNumber
+
+3.NSConcreteMutableData
+
+4.__NSSingleEntryDictionaryI
