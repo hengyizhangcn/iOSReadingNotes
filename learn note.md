@@ -61,6 +61,14 @@ UIKIT_EXTERN NSString *const UIApplicationInvalidInterfaceOrientationException N
 - (void)prepare NS_REQUIRES_SUPER;
 ```
 
+12.NS_REQUIRES_NIL_TERMINATION
+
+必须以nil结尾，如：
+
+```
++ (instancetype)arrayWithObjects:(ObjectType)firstObj, ... NS_REQUIRES_NIL_TERMINATION;
+```
+
 
 
 # 关键词
@@ -105,12 +113,72 @@ https://www.jianshu.com/p/b3a31eed945f
 
 # 数据类型
 
-容器类NSString, NSData, NSData, NSDictionary
+容器类对应有可变类型的，有NSString, NSData, NSData, NSDictionary等10个，数据类型的另种表现形式如下：
 
-1.__NSCFConstantString
+1.__NSCFConstantString，代表不可变/常量字符串(包括空字符串也用此表示)
+
+__NSCFString，代表可变字符串
 
 2.__NSCFNumber
 
-3.NSConcreteMutableData
+3._NSZeroData，代表不可变数据，并且为空
 
-4.__NSSingleEntryDictionaryI
+NSConcreteMutableData，代表不可变或可变数据
+
+4.__NSSingleEntryDictionaryI，代表不可变字典，且字典只有一个键值对
+
+__NSDictionaryI，代表不可变字典，有两个及以上键值对
+
+__NSDictionaryM，代表可变字典
+
+__NSDictionary0，代表空字典
+
+5.__NSSingleObjectArrayI，代表不可变数组，且数组只有一个元素
+
+__NSArrayI，代表不可变数组，有两个及以上元素
+
+__NSArrayM，代表可变数组
+
+__NSArray0，代表空数组
+
+6.__NSSingleObjectSetI，代表不可变集合只有一个元素
+
+__NSSetI，代表不可变集合，为空或有两个及以上元素
+
+__NSSetM，代表可变集合
+
+7.__NSOrderedSetI，代表不可变有序集合
+
+__NSOrderedSetM，代表可变有序集合
+
+8._NSCachedIndexSet，代表不可变索引集合
+
+NSMutableIndexSet，代表可变索引集合
+
+9.NSURLRequest，代表不可变url请求
+
+NSMutableURLRequest，代表可变url请求
+
+10.__NSCFCharacterSet，不可变/可变字符集合
+
+11.NSConcreteAttributedString，不可变属性字符串
+
+NSConcreteMutableAttributedString，可变属性字符串
+
+iOS可变对象有哪些：
+
+```
+NSMutableArray,
+NSMutableDictionary,
+NSMutableSet,
+NSMutableString,
+NSMutableOrderedSet, //有序集合，元素不可重复
+NSMutableIndexSet,
+NSMutableData,
+NSMutableURLRequest,
+NSMutableCharacterSet,
+NSMutableAttributedString,
+#NSMutableFontCollection为AppKit的类
+#NSMutableCoping为协议
+```
+

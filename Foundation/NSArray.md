@@ -13,6 +13,13 @@
 
 ```
 - (NSArray<ObjectType> *)arrayByAddingObject:(ObjectType)anObject; //如果添加的对象anObject为nil，则此方法会抛出NSInvalidArgument异常
+
+
+
+
++ (instancetype)arrayWithObject:(ObjectType)anObject; //当anObject为nil时会崩溃
++ (instancetype)arrayWithObjects:(const ObjectType Nonnull [Nonnull])objects count:(NSUInteger)cnt;//当cnt超过objects的总数时，会崩溃
+
 ```
 
 3.如果数组为空，以下两个方法获取的值为nil
@@ -110,21 +117,7 @@ typedef NS_OPTIONS(NSUInteger, NSBinarySearchingOptions) {
 
 @interface NSArray<ObjectType> (NSArrayCreation)
 
-\+ (instancetype)array;
-
-\+ (instancetype)arrayWithObject:(ObjectType)anObject;
-
-\+ (instancetype)arrayWithObjects:(const ObjectType _Nonnull [_Nonnull])objects count:(NSUInteger)cnt;
-
-\+ (instancetype)arrayWithObjects:(ObjectType)firstObj, ... NS_REQUIRES_NIL_TERMINATION;
-
-\+ (instancetype)arrayWithArray:(NSArray<ObjectType> *)array;
-
-\- (instancetype)initWithObjects:(ObjectType)firstObj, ... NS_REQUIRES_NIL_TERMINATION;
-
-\- (instancetype)initWithArray:(NSArray<ObjectType> *)array;
-
-\- (instancetype)initWithArray:(NSArray<ObjectType> *)array copyItems:(BOOL)flag;
+\- (instancetype)initWithArray:(NSArray<ObjectType> *)array copyItems:(BOOL)flag; //如果flag为YES，在array数组里面的对象都必须遵循NSCopying协议
 
 /* Reads array stored in NSPropertyList format from the specified url. */
 
@@ -136,47 +129,17 @@ typedef NS_OPTIONS(NSUInteger, NSBinarySearchingOptions) {
 
 @end
 
-@interface NSArray<ObjectType> (NSDeprecated)
-
-/* This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range: instead.
-
-*/
-
-\- (void)getObjects:(ObjectType _Nonnull __unsafe_unretained [_Nonnull])objects NS_SWIFT_UNAVAILABLE("Use 'as [AnyObject]' instead") API_DEPRECATED("Use -getObjects:range: instead", macos(10.0, 10.13), ios(2.0, 11.0), watchos(2.0, 4.0), tvos(9.0, 11.0));
-
-/* These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants that use errors instead. */
-
-\+ (nullable NSArray<ObjectType> *)arrayWithContentsOfFile:(NSString *)path;
-
-\+ (nullable NSArray<ObjectType> *)arrayWithContentsOfURL:(NSURL *)url;
-
-\- (nullable NSArray<ObjectType> *)initWithContentsOfFile:(NSString *)path;
-
-\- (nullable NSArray<ObjectType> *)initWithContentsOfURL:(NSURL *)url;
-
-\- (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile;
-
-\- (BOOL)writeToURL:(NSURL *)url atomically:(BOOL)atomically;
-
-@end
-
 /****************	Mutable Array		****************/
 
 @interface NSMutableArray<ObjectType> : NSArray<ObjectType>
 
-\- (void)addObject:(ObjectType)anObject;
+\- (void)addObject:(ObjectType)anObject; //如果anObject为nil，会崩溃
 
-\- (void)insertObject:(ObjectType)anObject atIndex:(NSUInteger)index;
+\- (void)insertObject:(ObjectType)anObject atIndex:(NSUInteger)index; //如果anObject会崩溃，如果index越界也会崩溃
 
-\- (void)removeLastObject;
+\- (void)removeObjectAtIndex:(NSUInteger)index; //如果index越界会崩溃
 
-\- (void)removeObjectAtIndex:(NSUInteger)index;
-
-\- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(ObjectType)anObject;
-
-\- (instancetype)init NS_DESIGNATED_INITIALIZER;
-
-\- (instancetype)initWithCapacity:(NSUInteger)numItems NS_DESIGNATED_INITIALIZER;
+\- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(ObjectType)anObject; //如果index越界会崩溃，如果anObject为nil会崩溃
 
 \- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
@@ -186,17 +149,11 @@ typedef NS_OPTIONS(NSUInteger, NSBinarySearchingOptions) {
 
 ​    
 
-\- (void)addObjectsFromArray:(NSArray<ObjectType> *)otherArray;
+\- (void)exchangeObjectAtIndex:(NSUInteger)idx1 withObjectAtIndex:(NSUInteger)idx2; //如果idx1或idx2越界，则会崩溃
 
-\- (void)exchangeObjectAtIndex:(NSUInteger)idx1 withObjectAtIndex:(NSUInteger)idx2;
+\- (void)removeObject:(ObjectType)anObject inRange:(NSRange)range; //如果range越界，则会崩溃
 
-\- (void)removeAllObjects;
-
-\- (void)removeObject:(ObjectType)anObject inRange:(NSRange)range;
-
-\- (void)removeObject:(ObjectType)anObject;
-
-\- (void)removeObjectIdenticalTo:(ObjectType)anObject inRange:(NSRange)range;
+\- (void)removeObjectIdenticalTo:(ObjectType)anObject inRange:(NSRange)range;//如果range越界，则会崩溃
 
 \- (void)removeObjectIdenticalTo:(ObjectType)anObject;
 
@@ -204,11 +161,11 @@ typedef NS_OPTIONS(NSUInteger, NSBinarySearchingOptions) {
 
 \- (void)removeObjectsInArray:(NSArray<ObjectType> *)otherArray;
 
-\- (void)removeObjectsInRange:(NSRange)range;
+\- (void)removeObjectsInRange:(NSRange)range;//如果range越界，则会崩溃
 
-\- (void)replaceObjectsInRange:(NSRange)range withObjectsFromArray:(NSArray<ObjectType> *)otherArray range:(NSRange)otherRange;
+\- (void)replaceObjectsInRange:(NSRange)range withObjectsFromArray:(NSArray<ObjectType> *)otherArray range:(NSRange)otherRange;//如果range越界，则会崩溃
 
-\- (void)replaceObjectsInRange:(NSRange)range withObjectsFromArray:(NSArray<ObjectType> *)otherArray;
+\- (void)replaceObjectsInRange:(NSRange)range withObjectsFromArray:(NSArray<ObjectType> *)otherArray;//如果range越界，则会崩溃
 
 \- (void)setArray:(NSArray<ObjectType> *)otherArray;
 
@@ -216,11 +173,11 @@ typedef NS_OPTIONS(NSUInteger, NSBinarySearchingOptions) {
 
 \- (void)sortUsingSelector:(SEL)comparator;
 
-\- (void)insertObjects:(NSArray<ObjectType> *)objects atIndexes:(NSIndexSet *)indexes;
+\- (void)insertObjects:(NSArray<ObjectType> *)objects atIndexes:(NSIndexSet *)indexes; //如果indexes越界，或者indexs为nil会崩溃
 
-\- (void)removeObjectsAtIndexes:(NSIndexSet *)indexes;
+\- (void)removeObjectsAtIndexes:(NSIndexSet *)indexes;//如果indexes越界，或者indexs为nil会崩溃
 
-\- (void)replaceObjectsAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray<ObjectType> *)objects;
+\- (void)replaceObjectsAtIndexes:(NSIndexSet *)indexes withObjects:(NSArray<ObjectType> *)objects;//如果indexes越界，或者indexs为nil会崩溃
 
 \- (void)setObject:(ObjectType)obj atIndexedSubscript:(NSUInteger)idx API_AVAILABLE(macos(10.8), ios(6.0), watchos(2.0), tvos(9.0));
 
@@ -232,9 +189,7 @@ typedef NS_OPTIONS(NSUInteger, NSBinarySearchingOptions) {
 
 @interface NSMutableArray<ObjectType> (NSMutableArrayCreation)
 
-\+ (instancetype)arrayWithCapacity:(NSUInteger)numItems;
-
-\+ (nullable NSMutableArray<ObjectType> *)arrayWithContentsOfFile:(NSString *)path;
+\+ (nullable NSMutableArray<ObjectType> *)arrayWithContentsOfFile:(NSString *)path; //文件必须是xml格式才能读取
 
 \+ (nullable NSMutableArray<ObjectType> *)arrayWithContentsOfURL:(NSURL *)url;
 
