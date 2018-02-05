@@ -69,7 +69,13 @@ UIKIT_EXTERN NSString *const UIApplicationInvalidInterfaceOrientationException N
 + (instancetype)arrayWithObjects:(ObjectType)firstObj, ... NS_REQUIRES_NIL_TERMINATION;
 ```
 
+13.NS_RETURNS_INNER_POINTER
 
+返回纯C语言的指针变量
+
+14.NS_RETURNS_RETAINED
+
+NS_RETURNS_NOT_RETAINED
 
 # 关键词
 
@@ -180,5 +186,107 @@ NSMutableCharacterSet,
 NSMutableAttributedString,
 #NSMutableFontCollection为AppKit的类
 #NSMutableCoping为协议
+```
+
+
+
+# 异常有哪些
+
+1.NSInvalidArgumentException
+
+无效参数异常
+
+2.NSParseErrorException
+
+解析错误，（如NSString的propertyList可能会出现）
+
+3.NSRangeException
+
+范围越界错误
+
+
+
+# 类型知多少
+
+1.unichar 是两个字节长的char，代表unicode的一个字符。
+
+
+
+# 数据转换
+
+1.NSString -> NSData
+
+```
+-(NSData *)dataUsingEncoding:(NSStringEncoding)encoding allowLossyConversion:(BOOL)lossy;
+-(NSData *)dataUsingEncoding:(NSStringEncoding)encoding;
+```
+
+NSString -> NSArray
+
+```
+- (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator;
+- (NSArray<NSString *> *)componentsSeparatedByCharactersInSet:(NSCharacterSet *)separator API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));//在集合里面的字符都可作为分隔符号
+其中第二种形式，需要先把NSString转化为NSCharacterSet，如
+NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:@"&@*"];
+```
+
+NSString->NSDictionary
+
+这里的NSString必须是jsonString，做法是先把jsonString转成NSData，再转成NSDictionary，用NSJsonSerialization类方法，如下：
+
+```
++ (nullable NSData *)dataWithJSONObject:(id)obj options:(NSJSONWritingOptions)opt error:(NSError **)error;
++ (nullable id)JSONObjectWithData:(NSData *)data options:(NSJSONReadingOptions)opt error:(NSError **)error;
+```
+
+2.NSArray -> NSString
+
+```
+- (NSString *)componentsJoinedByString:(NSString *)separator;
+```
+
+NSArray->NSData，可通过NSKeyedArchiver类方法，如下：
+
+```
+NSArray *tables = @[@"12", @"34", @"45"];
+NSData *tablesData = [NSKeyedArchiver archivedDataWithRootObject:tables];
+```
+
+3.NSData->NSString
+
+需使用NSString的对象方法，即
+
+```
+- (nullable instancetype)initWithData:(NSData *)data encoding:(NSStringEncoding)encoding;
+```
+
+NSData->NSDictionary，通过NSJsonSerialization类，如下:
+
+```
++ (nullable id)JSONObjectWithData:(NSData *)data options:(NSJSONReadingOptions)opt error:(NSError **)error;
+```
+
+NSData->NSArray，可通过NSKeyedUnarchiver类，如下：
+
+```
+NSArray *unArchiveredTables = [NSKeyedUnarchiver unarchiveObjectWithData:tablesData];
+```
+
+4.NSDictionary->NSData
+
+通过NSJsonSerialization类，如下:
+
+```
++ (nullable NSData *)dataWithJSONObject:(id)obj options:(NSJSONWritingOptions)opt error:(NSError **)error;
+```
+
+NSDictionary->NSString
+
+可以先把NSDictionary转成NSData，再由NSData转换成NSString，如:
+
+```
+NSDictionary *dict = @{@"name":@"zhy"};
+NSData *nameData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONReadingMutableLeaves error:nil];
+NSString *nameStr = [[NSString alloc] initWithData:nameData encoding:NSUTF8StringEncoding];
 ```
 
