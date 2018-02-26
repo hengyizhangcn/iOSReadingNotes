@@ -77,6 +77,14 @@ UIKIT_EXTERN NSString *const UIApplicationInvalidInterfaceOrientationException N
 
 NS_RETURNS_NOT_RETAINED
 
+15.NS_NOESCAPE
+
+```
+允许编译器在block内优化代码。
+```
+
+
+
 # 关键词
 
 ###### 属性关键字
