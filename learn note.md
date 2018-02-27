@@ -123,7 +123,11 @@ __nonnull 指对象不能为NULL
 
 https://www.jianshu.com/p/b3a31eed945f
 
+其它关键字有：
 
+1.class
+
+2.
 
 # 数据类型
 
