@@ -395,6 +395,8 @@ NS_ASSUME_NONNULL_END
 
 https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i
 
+bundle Id用来验证应用的签名
+
 2.Frame编程规范
 
 https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183i
@@ -402,3 +404,19 @@ https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFr
 3.SDK兼容规范
 
 https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/cross_development/Introduction/Introduction.html#//apple_ref/doc/uid/10000163i
+
+4.Cocoa Core Competencies ★★★★★
+
+https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/ObjectCreation.html#//apple_ref/doc/uid/TP40008195-CH39-SW1
+
+5.App Programming Guide for iOS
+
+https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html#//apple_ref/doc/uid/TP40007072-CH2-SW9
+
+6.Resource Programming Guide
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/LoadingResources/Strings/Strings.html#//apple_ref/doc/uid/10000051i-CH6-96936
+
+
+
+6.xinetd和inetd比较？
