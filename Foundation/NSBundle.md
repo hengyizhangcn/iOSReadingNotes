@@ -413,6 +413,10 @@ https://developer.apple.com/library/content/documentation/General/Conceptual/Dev
 
 https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html#//apple_ref/doc/uid/TP40007072-CH2-SW9
 
+1）在info.plist文件中，UIBackgroundModes有哪几种值？包括remote-notification、external-accessory等
+
+2）
+
 6.Resource Programming Guide
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/LoadingResources/Strings/Strings.html#//apple_ref/doc/uid/10000051i-CH6-96936
@@ -445,6 +449,8 @@ https://developer.apple.com/library/content/documentation/General/Conceptual/Con
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i
 
+14.Local and Remote Notification Programming Guide
 
+https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/index.html#//apple_ref/doc/uid/TP40008194
 
 6.xinetd和inetd比较？
