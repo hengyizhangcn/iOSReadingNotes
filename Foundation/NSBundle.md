@@ -415,7 +415,7 @@ https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPho
 
 1）在info.plist文件中，UIBackgroundModes有哪几种值？包括remote-notification、external-accessory等
 
-2）
+2）描述了怎样的app允许在后台执行
 
 6.Resource Programming Guide
 
@@ -452,5 +452,9 @@ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserD
 14.Local and Remote Notification Programming Guide
 
 https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/index.html#//apple_ref/doc/uid/TP40008194
+
+15.File System Programming Guide
+
+https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010672
 
 6.xinetd和inetd比较？
