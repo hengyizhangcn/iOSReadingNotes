@@ -453,4 +453,8 @@ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserD
 
 https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/index.html#//apple_ref/doc/uid/TP40008194
 
+15.Internationalization and Localization Guide
+
+https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html#//apple_ref/doc/uid/10000171i
+
 6.xinetd和inetd比较？
