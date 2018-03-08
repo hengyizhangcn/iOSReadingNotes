@@ -415,7 +415,11 @@ https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPho
 
 1）在info.plist文件中，UIBackgroundModes有哪几种值？包括remote-notification、external-accessory等
 
-2）
+2）描述了怎样的app允许在后台执行
+
+3）怎样减少内存占用
+
+4）如何提高应用性能
 
 6.Resource Programming Guide
 
@@ -456,5 +460,16 @@ https://developer.apple.com/library/content/documentation/NetworkingInternet/Con
 15.Internationalization and Localization Guide
 
 https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html#//apple_ref/doc/uid/10000171i
+16.File System Programming Guide
+
+https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010672
+
+17.SDK Compatibility Guide
+
+https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/cross_development/Introduction/Introduction.html#//apple_ref/doc/uid/10000163i
+
+18.Coding Guidelines for Cocoa
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-1001751-BCIJHEDH
 
 6.xinetd和inetd比较？
