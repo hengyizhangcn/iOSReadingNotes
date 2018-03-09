@@ -472,4 +472,12 @@ https://developer.apple.com/library/content/documentation/DeveloperTools/Concept
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-1001751-BCIJHEDH
 
+19.Archives and Serializations Programming Guide
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Archiving/Archiving.html#//apple_ref/doc/uid/10000047i
+
+20.Collections Programming Topics
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Collections/Collections.html#//apple_ref/doc/uid/10000034i
+
 6.xinetd和inetd比较？
