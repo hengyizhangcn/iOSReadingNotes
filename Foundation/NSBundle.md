@@ -480,4 +480,12 @@ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Archi
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Collections/Collections.html#//apple_ref/doc/uid/10000034i
 
+21.Programming with Objective-C
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/FoundationTypesandCollections/FoundationTypesandCollections.html#//apple_ref/doc/uid/TP40011210-CH7-SW28
+
+22.Error Handling Programming Guide
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/CreateCustomizeNSError/CreateCustomizeNSError.html#//apple_ref/doc/uid/TP40001806-CH204-BAJIIGCC
+
 6.xinetd和inetd比较？
