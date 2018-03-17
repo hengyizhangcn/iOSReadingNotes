@@ -488,4 +488,12 @@ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Progr
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/CreateCustomizeNSError/CreateCustomizeNSError.html#//apple_ref/doc/uid/TP40001806-CH204-BAJIIGCC
 
+23.Information Property List Key Reference
+
+https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW18
+
+24.Key-Value Observing Programming Guide
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i
+
 6.xinetd和inetd比较？

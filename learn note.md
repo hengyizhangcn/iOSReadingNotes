@@ -222,7 +222,13 @@ NSMutableAttributedString,
 
 1.unichar 是两个字节长的char，代表unicode的一个字符。
 
+# 类型检查建议
 
+1.对于类，isKindOfClass:
+
+2.对于消息，respondsToSelector:
+
+3.对于协议一致性，conformsToProtocol:
 
 # 数据转换
 
