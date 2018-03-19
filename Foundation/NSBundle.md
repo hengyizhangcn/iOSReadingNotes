@@ -503,4 +503,20 @@ https://developer.apple.com/library/content/documentation/General/Reference/Info
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i
 
+25.Advanced Memory Management Programming Guide
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6
+
+26.iOS Debugging Magic
+
+https://developer.apple.com/library/content/technotes/tn2239/_index.html#//apple_ref/doc/uid/DTS40010638
+
+27.Instruments User Guide
+
+https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/TheInstrumentsWorkflow.html#//apple_ref/doc/uid/TP40004652-CH5
+
+28.Memory Management Programming Guide for Core Foundation
+
+https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/CFMemoryMgmt.html#//apple_ref/doc/uid/10000127i
+
 6.xinetd和inetd比较？
