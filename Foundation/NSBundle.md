@@ -409,6 +409,13 @@ https://developer.apple.com/library/content/documentation/DeveloperTools/Concept
 
 https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/ObjectCreation.html#//apple_ref/doc/uid/TP40008195-CH39-SW1
 
+```
+Cocoa核心能力
+可用性、存取方法、appID、Block对象、Bundle、类别、类簇、类定义、类方法、CocoaTouch、编码规范、集合、类对象、声明属性、代理 、动态绑定、动态输入、枚举、异常处理、framework、信息属性列表plist、初始化、国际化、内省、KVC、KVO、内存管理、消息、方法覆盖、模型对象、MVC、多重初始化、Nib文件、通知、对象归档、对象比较、对象拷贝、对象创建、对象编码、对象图、对象生命周期、对象建模、对象可变性、对象归属权、属性列表、协议、根类、选择器、单例、统一类型标识符、值对象
+```
+
+
+
 5.App Programming Guide for iOS
 
 https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html#//apple_ref/doc/uid/TP40007072-CH2-SW9
@@ -487,5 +494,13 @@ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Progr
 22.Error Handling Programming Guide
 
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/CreateCustomizeNSError/CreateCustomizeNSError.html#//apple_ref/doc/uid/TP40001806-CH204-BAJIIGCC
+
+23.Information Property List Key Reference
+
+https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW18
+
+24.Key-Value Observing Programming Guide
+
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i
 
 6.xinetd和inetd比较？
