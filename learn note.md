@@ -95,7 +95,7 @@ NS_RETURNS_NOT_RETAINED
 
 # 关键词
 
-###### 属性关键字
+###### 属性关键字(或lifetime qualifiers，即终身限定词)
 
 普通类型属性默认关键字 atomic, readwrite, assign
 
@@ -135,7 +135,70 @@ https://www.jianshu.com/p/b3a31eed945f
 
 1.class
 
-2.
+2.retain和strong是同义词
+
+3.assign和weak很相似，如下：
+
+>```
+>@property(assign) MyClass *myObject;
+>@property(weak) MyClass *myObject; 
+>//区别是当myObject被释放时，属性值会被设置为nil; 而assign所指的属性会变成悬浮指针(dangling pointer)或野指针
+>//assign可以修饰oc或非oc对象，而weak只能修饰oc对象
+>```
+
+###### 变量限定符
+
+__strong 默认
+
+__weak 声明一个引用但不保持对象生命，当对象没有强引用的时候这个弱引用就被设置为nil了
+
+__unsafe_unretained，声明一个引用但不保持对象生命，当对象没有强引用的时候它不会被设置为nil，如果引用的对象被释放的话，指针就变成悬浮的了
+
+__autoreleasing
+
+在对象声明中使用限定符的正确格式如下：
+
+```
+ClassName * qualifier variableName;
+如：
+MyClass * __weak myWeakReference;
+MyClass * __unsafe_unretained myUnsafeReference;
+```
+
+
+
+###### 消除循环引用 
+
+1.打破block的循环引用的两种方法
+
+a.使用__weak
+
+b.把__block的值置为nil，如下：
+
+```
+MyViewController * __block myController = [[MyViewController alloc] init…];
+// ...
+myController.completionHandler =  ^(NSInteger result) {
+    [myController dismissViewControllerAnimated:YES completion:nil];
+    myController = nil;
+};
+```
+
+###### 无损桥接（Toll-free bridging）
+
+如果需要在OC和CoreFoundation类型对象间进行强转，你需要告诉编译器对象的所有权
+
+__bridge 在OC和CoreFoundation间传递指针，但不发生所有的权的转移
+
+__bridge_retained 或者 CFBridgingRetain 会把OC指针强转成CF指针，而且向你转移所有权；你有责任去调用CFRelease或者相关的函数去释放所有权
+
+__bridge_transfer或者CFBridgingRelease 会把非OC指针转成OC并且向ARC传递所有权（你不用再关心对象的释放，由ARC去负责）
+
+注：不能直接在id和void *之间进行转换
+
+>For declared properties, you should use `assign` instead of `weak`; for variables you should use `__unsafe_unretained` instead of `__weak`.
+
+
 
 # 数据类型
 
