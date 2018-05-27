@@ -83,6 +83,14 @@ NS_RETURNS_NOT_RETAINED
 允许编译器在block内优化代码。
 ```
 
+16.API_AVAILABLE
+
+定义可用性信息，如
+
+```
+- (void) newMethod API_AVAILABLE(ios(11), macosx(10.13));
+```
+
 
 
 # 关键词
