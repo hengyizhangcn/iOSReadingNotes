@@ -129,7 +129,11 @@ diagram(1).bpmn -- file:///Users/zhy/Desktop/
 
 \+ (nullable NSString *)pathForResource:(nullable NSString *)name ofType:(nullable NSString *)ext inDirectory:(NSString *)bundlePath;
 
-\+ (NSArray<NSString *> *)pathsForResourcesOfType:(nullable NSString *)ext inDirectory:(NSString *)bundlePath;
+\+ (NSArray<NSString *> *)pathsForResourcesOfType:(nullable NSString *)ext inDirectory:(NSString *)bundlePath; //可用于查找文件路径
+
+```
+po [NSBundle pathsForResourcesOfType:@"pdf" inDirectory:@"/Users/zhy/Desktop/"]
+```
 
 \- (nullable NSString *)pathForResource:(nullable NSString *)name ofType:(nullable NSString *)ext;
 
