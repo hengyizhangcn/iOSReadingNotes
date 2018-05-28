@@ -14,11 +14,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef struct {
 
-​    CGFloat m11, m12, m21, m22;
+​    CGFloat m11, m12, m21, m22; //m11,m22控制缩放，m12,m21旋转
 
-​    CGFloat tX, tY;
+​    CGFloat tX, tY; //控制平移
 
 } NSAffineTransformStruct;
+
+![旋转R矩阵](旋转R矩阵.png)
+![缩放S矩阵](缩放S矩阵.png)
+
+```
+
+如果是缩放，乘以s矩阵，如果是旋转，再乘以R矩阵即可
+```
+
+
 
 @interface NSAffineTransform : NSObject <NSCopying, NSSecureCoding> {
 
